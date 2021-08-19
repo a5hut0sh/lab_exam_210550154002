@@ -6,22 +6,14 @@
 #include <unistd.h>
 #include "ioctl_header.h"
 
-struct operator
-{
-	int num1;
-	int num2;
-	char operation;
-};
+
 
 int main()
 {
-	int fd, result;
-	struct operator data;
-	printf("Enter two number: ");
-	scanf("%d %d",&data.num1,&data.num2);
+	int fd;
 
-	printf("Menu:\n'+' for Addition\n'-' for Subtraction\n'*' for Multiplication\n'/' for Division\n");
-	scanf(" %c",&data.operation);
+
+
 
 	fd = open("/dev/MyIoctl",O_RDWR,0777);
 	if(fd<0) 
